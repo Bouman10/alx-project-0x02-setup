@@ -1,10 +1,5 @@
 import React from 'react';
-
-export interface CardProps {
-  title: string;
-  content: string;
-  author?: string;
-}
+import { type CardProps } from '../../interfaces'; 
 
 export default function Card({ title, content, author }: CardProps) {
   return (

@@ -1,4 +1,6 @@
 import { useState, FormEvent } from 'react';
+import Input from './Input';
+import Form from './Form';
 
 interface PostModalProps {
   isOpen: boolean;
@@ -24,11 +26,10 @@ export default function PostModal({ isOpen, onClose, onSubmit }: PostModalProps)
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-6 rounded-xl w-full max-w-md shadow-lg relative">
         <h2 className="text-xl font-bold mb-4">Add New Post</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input
+        <Form onSubmit={handleSubmit}>
+          <Input
             type="text"
             placeholder="Title"
-            className="w-full border p-2 rounded"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
@@ -56,7 +57,7 @@ export default function PostModal({ isOpen, onClose, onSubmit }: PostModalProps)
               Add
             </button>
           </div>
-        </form>
+        </Form>
       </div>
     </div>
   );
